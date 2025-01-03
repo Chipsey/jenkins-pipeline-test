@@ -43,7 +43,7 @@ pipeline {
                                 allowMissing: true,
                                 alwaysLinkToLastBuild: true,
                                 keepAll: true,
-                                reportDir: 'target/site/serenity',
+                                reportDir: 'UI-Testing/target/serenity-reports',
                                 reportFiles: 'index.html',
                                 reportName: 'Serenity UI Test Report'
                             ])
