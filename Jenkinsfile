@@ -23,10 +23,10 @@ pipeline {
                             publishHTML (target : [allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: 'reports',
-                            reportFiles: 'api-report.html',
-                            reportName: 'Api Reports',
-                            reportTitles: 'Api Report'
+                            reportDir: 'API-Testing/target/site/serenity', // Updated path
+                            reportFiles: 'index.html',  // Updated report file
+                            reportName: 'API Serenity Reports', // Report name
+                            reportTitles: 'API Serenity Test Report' // Report title
                             ])
                         }
                     }
