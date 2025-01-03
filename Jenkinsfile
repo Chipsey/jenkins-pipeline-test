@@ -15,7 +15,7 @@ pipeline {
                 stage('API Tests') {
                     steps {
                         dir('API-Testing') {
-                            sh "${MAVEN_HOME}/bin/mvn clean verify"
+                            sh "${MAVEN_HOME}/bin/mvn clean install"
                         }
                     }
                     post {
@@ -34,7 +34,7 @@ pipeline {
                 stage('UI Tests') {
                     steps {
                         dir('UI-Testing') {
-                            sh "${MAVEN_HOME}/bin/mvn clean verify"
+                            sh "${MAVEN_HOME}/bin/mvn clean install"
                         }
                     }
                     post {
