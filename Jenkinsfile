@@ -23,34 +23,33 @@ pipeline {
                             publishHTML (target : [allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: 'API-Testing/target/site/serenity', // Updated path
-                            reportFiles: 'index.html',  // Updated report file
-                            reportName: 'API Serenity Reports', // Report name
-                            reportTitles: 'API Serenity Test Report' // Report title
-                            archiveDir: 'API-Testing/reports'  // Archive report to a project directory
+                            reportDir: 'API-Testing/target/site/serenity',
+                            reportFiles: 'index.html',
+                            reportName: 'API Serenity Reports',
+                            reportTitles: 'API Serenity Test Report'
                             ])
                         }
                     }
                 }
-                // stage('UI Tests') {
-                //     steps {
-                //         dir('UI-Testing') {
-                //             sh "${MAVEN_HOME}/bin/mvn clean install"
-                //         }
-                //     }
-                //     post {
-                //         always {
-                //             publishHTML(target: [
-                //                 allowMissing: true,
-                //                 alwaysLinkToLastBuild: true,
-                //                 keepAll: true,
-                //                 reportDir: 'UI-Testing/target/serenity-reports',
-                //                 reportFiles: 'index.html',
-                //                 reportName: 'Serenity UI Test Report'
-                //             ])
-                //         }
-                //     }
-                // }
+                stage('UI Tests') {
+                    steps {
+                        dir('UI-Testing') {
+                            sh "${MAVEN_HOME}/bin/mvn clean install"
+                        }
+                    }
+                    post {
+                        always {
+                            publishHTML (target : [allowMissing: false,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'UI-Testing/target/site/serenity',
+                            reportFiles: 'index.html',
+                            reportName: 'UI Serenity Reports',
+                            reportTitles: 'UI Serenity Test Report'
+                            ])
+                        }
+                    }
+                }
             }
         }
     }
