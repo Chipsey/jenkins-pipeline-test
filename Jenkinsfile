@@ -27,6 +27,7 @@ pipeline {
                             reportFiles: 'index.html',  // Updated report file
                             reportName: 'API Serenity Reports', // Report name
                             reportTitles: 'API Serenity Test Report' // Report title
+                            archiveDir: 'API-Testing/reports'  // Archive report to a project directory
                             ])
                         }
                     }
