@@ -14,7 +14,7 @@ pipeline {
             parallel {
                 stage('API Tests') {
                     steps {
-                        dir('IT-Quality-Assurance-Assignment-API-Testing') {
+                        dir('API-Testing') {
                             sh "${MAVEN_HOME}/bin/mvn clean verify"
                         }
                     }
@@ -33,7 +33,7 @@ pipeline {
                 }
                 stage('UI Tests') {
                     steps {
-                        dir('IT-Quality-Assurance-Assignment-UI-Testing') {
+                        dir('UI-Testing') {
                             sh "${MAVEN_HOME}/bin/mvn clean verify"
                         }
                     }
