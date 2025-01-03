@@ -20,13 +20,13 @@ pipeline {
                     }
                     post {
                         always {
-                            publishHTML(target: [
-                                allowMissing: true,
-                                alwaysLinkToLastBuild: true,
-                                keepAll: true,
-                                reportDir: 'API-Testing/target/serenity-reports',
-                                reportFiles: 'index.html',
-                                reportName: 'Serenity API Test Report'
+                            publishHTML (target : [allowMissing: false,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'reports',
+                            reportFiles: 'api-report.html',
+                            reportName: 'Api Reports',
+                            reportTitles: 'Api Report'
                             ])
                         }
                     }
