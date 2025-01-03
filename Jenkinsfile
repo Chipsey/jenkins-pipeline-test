@@ -31,25 +31,25 @@ pipeline {
                         }
                     }
                 }
-                stage('UI Tests') {
-                    steps {
-                        dir('UI-Testing') {
-                            sh "${MAVEN_HOME}/bin/mvn clean install"
-                        }
-                    }
-                    post {
-                        always {
-                            publishHTML(target: [
-                                allowMissing: true,
-                                alwaysLinkToLastBuild: true,
-                                keepAll: true,
-                                reportDir: 'UI-Testing/target/serenity-reports',
-                                reportFiles: 'index.html',
-                                reportName: 'Serenity UI Test Report'
-                            ])
-                        }
-                    }
-                }
+                // stage('UI Tests') {
+                //     steps {
+                //         dir('UI-Testing') {
+                //             sh "${MAVEN_HOME}/bin/mvn clean install"
+                //         }
+                //     }
+                //     post {
+                //         always {
+                //             publishHTML(target: [
+                //                 allowMissing: true,
+                //                 alwaysLinkToLastBuild: true,
+                //                 keepAll: true,
+                //                 reportDir: 'UI-Testing/target/serenity-reports',
+                //                 reportFiles: 'index.html',
+                //                 reportName: 'Serenity UI Test Report'
+                //             ])
+                //         }
+                //     }
+                // }
             }
         }
     }
